@@ -1,5 +1,7 @@
 package by.epam.javatraining.igoryasko.firstmaintask.model.logic.data;
 
+import java.util.Random;
+
 /**
  * Created by igoryasko
  *
@@ -13,10 +15,18 @@ public class Matrix {
 
     public Matrix(final int row, final int column){
         this.elementData = new double[row][column];
+        this.fillElementDataRandom();
     }
 
     public Matrix(final double[][] matrix){
         this.elementData = matrix;
+    }
+
+    private void fillElementDataRandom(){
+        Random random = new Random();
+        for (int i = 0; i < elementData.length; i++){
+            elementData[i][i] = random.nextDouble() * 100;
+        }
     }
 
     public double getElement(final int index, final int index2){
@@ -33,6 +43,10 @@ public class Matrix {
 
     public int innerSize(final int inner){
         return elementData[inner].length;
+    }
+
+    public double[][] toArray(){
+        return elementData;
     }
 
 }

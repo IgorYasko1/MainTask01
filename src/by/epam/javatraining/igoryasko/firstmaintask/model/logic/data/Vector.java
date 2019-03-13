@@ -60,7 +60,7 @@ public class Vector {
     }
 
     public static void main(String[] args) {
-        Vector vector = new Vector(5);
+        Vector vector = new Vector(5, 2);
         vector.print();
     }
 
