@@ -1,7 +1,10 @@
 package by.epam.javatraining.igoryasko.firstmaintask.model.logic.data;
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Created by igoryasko on 4/1/19.
@@ -23,10 +26,6 @@ public class Vector {
         this.elementData = new double[value.length];
         this.fillElementData(value);
     }
-
-//    public Vector(){
-//
-//    }
 
     private void fillElementDataRandom(){
         Random random = new Random();
@@ -59,9 +58,33 @@ public class Vector {
         Arrays.stream(elementData).forEach(x -> System.out.println(x));
     }
 
+    public Vector(final String pathWithFileName, final int length){
+        this.elementData = new double[length];
+        this.fillElementDataFromFile(pathWithFileName);
+    }
+
+    private void fillElementDataFromFile(String path){
+        try(Scanner sc = new Scanner(Paths.get(path))){
+            int i = 0;
+            while (sc.hasNext()){
+                this.elementData[i] = sc.nextDouble();
+                i++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
-        Vector vector = new Vector(5, 2);
+        String path = "C:\\Users\\igory\\IdeaProjects\\MainTask\\file\\test.txt";
+//        try {
+//            Files.lines(Paths.get("C:\\Users\\igory\\IdeaProjects\\MainTask\\file\\test.txt")).forEach(System.out::println);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        Vector vector = new Vector(path, 5);
         vector.print();
     }
+
 
 }
