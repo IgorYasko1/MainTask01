@@ -25,7 +25,9 @@ public class Matrix {
     private void fillElementDataRandom(){
         Random random = new Random();
         for (int i = 0; i < elementData.length; i++){
-            elementData[i][i] = random.nextDouble() * 100;
+            for (int j = 0; j < elementData[i].length; j++){
+                elementData[i][j] = random.nextDouble() * 100;
+            }
         }
     }
 

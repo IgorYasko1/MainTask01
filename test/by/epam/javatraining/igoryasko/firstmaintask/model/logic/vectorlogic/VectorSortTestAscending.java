@@ -19,7 +19,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 @RunWith(Parameterized.class)
 public class VectorSortTestAscending {
-    private static double delta = 0.000000000001;
+    private static double delta = 0.00000000000001;
 
     private Vector vector;
     private double[] expected;

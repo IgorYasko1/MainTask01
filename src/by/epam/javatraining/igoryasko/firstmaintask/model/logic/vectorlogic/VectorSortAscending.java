@@ -167,16 +167,4 @@ public class VectorSortAscending {
 
     }
 
-    public static void main(String[] args) {
-
-        double[] mas = {-1, 3, 15, 2, 1, 100, -8};
-        Vector vector = new Vector(mas);
-        VectorSortAscending.mergeSort(vector, 0, vector.size() - 1);
-        for (int i = 0; i < vector.size(); i++) {
-            System.out.println(vector.getElement(i));
-        }
-
-    }
-
-
 }

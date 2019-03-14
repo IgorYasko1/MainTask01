@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 public class VectorLogicTest {
     private static Vector vector = new Vector(3, 9, 15, 27, 54);
-    private static double delta = 0.000000000001;
+    private static double delta = 0.00000000000001;
 
     @Test
     public void searchMinElement() {
