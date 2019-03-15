@@ -119,9 +119,9 @@ public class VectorLogic {
                     localMax = i;
                     break;
                 }
-//                if (vector.getElement(vector.size() - 1) > vector.getElement(vector.size() - 2)){
-//                    localMax = vector.size() - 1;
-//                }
+                if (vector.getElement(vector.size() - 1) > vector.getElement(vector.size() - 2)){
+                    localMax = vector.size() - 1;
+                }
             }
         }
         return localMax;
