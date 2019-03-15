@@ -63,13 +63,15 @@ public class VectorLogicTest {
 
     @Test
     public void findLocalMin() {
-        double expected = 3;
+        Vector vector = new Vector(0, 0, 1, 0, 3, 4);
+        int expected = 3;
         assertEquals(expected, VectorLogic.findLocalMin(vector), delta);
     }
 
     @Test
     public void findLocalMax() {
-        double expected = 9;
+        Vector vector = new Vector(0, 0, 1, 4, 3, 4);
+        int expected = 3;
         assertEquals(expected, VectorLogic.findLocalMax(vector), delta);
     }
 

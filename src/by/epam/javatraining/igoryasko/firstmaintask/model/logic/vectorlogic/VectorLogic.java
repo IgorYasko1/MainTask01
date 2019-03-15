@@ -97,6 +97,9 @@ public class VectorLogic {
                     localMin = i;
                     break;
                 }
+                if(vector.getElement(vector.size() - 1) < vector.getElement(vector.size() - 2)){
+                    localMin = vector.size() - 1;
+                }
             }
         }
         return localMin;
@@ -108,7 +111,7 @@ public class VectorLogic {
         if (vector.size() == 1){
             localMax = index;
         }else if (vector.getElement(index) > vector.getElement(index + 1)){
-            localMax =index;
+            localMax = index;
         }else {
             for (int i = 1; i < vector.size() - 1; i++) {
                 if (vector.getElement(i) > vector.getElement(i + 1)
@@ -116,9 +119,17 @@ public class VectorLogic {
                     localMax = i;
                     break;
                 }
+//                if (vector.getElement(vector.size() - 1) > vector.getElement(vector.size() - 2)){
+//                    localMax = vector.size() - 1;
+//                }
             }
         }
         return localMax;
+    }
+
+    public static void main(String[] args) {
+        Vector vector = new Vector(3, 9, 15, 27, 54);
+        System.out.println(VectorLogic.findLocalMax(vector));
     }
 
 }
