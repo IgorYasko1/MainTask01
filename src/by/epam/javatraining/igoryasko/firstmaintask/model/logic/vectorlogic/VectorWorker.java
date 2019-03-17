@@ -7,16 +7,16 @@ import by.epam.javatraining.igoryasko.firstmaintask.model.logic.data.Vector;
  *
  * @author igoryasko
  * <p>
- * Class VectorLogic implements methods for Vector
+ * Class VectorWorker implements methods for Vector
  * arithmetic and geometric mean,
- * searchMinElement, searchMaxElement
+ * findMinElement, findMaxElement
  * checkAscendingOrder, checkDescendingOrder
  * findLocalMin, findLocalMax
  */
 
-public class VectorLogic {
+public class VectorWorker {
 
-    public static double searchMinElement(Vector vector) {
+    public static double findMinElement(Vector vector) {
         double minIndex = vector.getElement(0);
         for (int i = 1; i < vector.size(); i++) {
             if (minIndex > vector.getElement(i)) {
@@ -26,7 +26,7 @@ public class VectorLogic {
         return minIndex;
     }
 
-    public static double searchMaxElement(Vector vector) {
+    public static double findMaxElement(Vector vector) {
         double maxIndex = vector.getElement(0);
         for (int i = 1; i < vector.size(); i++) {
             if (maxIndex < vector.getElement(i)) {
@@ -36,7 +36,7 @@ public class VectorLogic {
         return maxIndex;
     }
 
-    public static double findArithmeticAverage(Vector vector) {
+    public static double countArithmeticMean(Vector vector) {
         if (vector.size() == 0) {
             return 0;
         }
@@ -49,7 +49,7 @@ public class VectorLogic {
         return result;
     }
 
-    public static double findGeometricAverage(Vector vector) {
+    public static double countGeometricMean(Vector vector) {
         if (vector.size() == 0) {
             return 0;
         }
@@ -127,9 +127,5 @@ public class VectorLogic {
         return localMax;
     }
 
-    public static void main(String[] args) {
-        Vector vector = new Vector(3, 9, 15, 27, 54);
-        System.out.println(VectorLogic.findLocalMax(vector));
-    }
 
 }

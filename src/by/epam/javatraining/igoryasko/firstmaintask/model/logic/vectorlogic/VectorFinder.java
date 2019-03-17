@@ -7,10 +7,10 @@ import by.epam.javatraining.igoryasko.firstmaintask.model.logic.data.Vector;
  *
  * @author igoryasko
  *
- * Class VectorSearch implements methods linearSearch and binarySearch
+ * Class VectorFinder implements methods linearSearch and binarySearch
  */
 
-public class VectorSearch {
+public class VectorFinder {
 
 //    complexity O(n)
     public static int linearSearch(Vector vector, double searchValue){

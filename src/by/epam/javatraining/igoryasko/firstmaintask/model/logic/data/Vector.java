@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class Vector {
 
-    private final double[] elementData;
+    private double[] elementData;
 
     public Vector(final int size){
         this.elementData = new double[size];
@@ -54,6 +54,14 @@ public class Vector {
         return elementData;
     }
 
+    public double[] getElementData() {
+        return elementData;
+    }
+
+    public void setElementData(double[] elementData) {
+        this.elementData = elementData;
+    }
+
     public void print(){
         Arrays.stream(elementData).forEach(x -> System.out.println(x));
     }
@@ -63,7 +71,7 @@ public class Vector {
         this.fillElementDataFromFile(pathWithFileName);
     }
 
-    private void fillElementDataFromFile(String path){
+    private void fillElementDataFromFile(final String path){
         try(Scanner sc = new Scanner(Paths.get(path))){
             int i = 0;
             while (sc.hasNext()){
@@ -75,6 +83,13 @@ public class Vector {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Vector{" +
+                "elementData=" + Arrays.toString(elementData) +
+                '}';
+    }
+
     public static void main(String[] args) {
         String path = "C:\\Users\\igory\\IdeaProjects\\MainTask\\file\\test.txt";
 //        try {
@@ -83,7 +98,8 @@ public class Vector {
 //            e.printStackTrace();
 //        }
         Vector vector = new Vector(path, 5);
-        vector.print();
+        Vector vector2 = new Vector();
+        System.out.println(vector.toString());
     }
 
 

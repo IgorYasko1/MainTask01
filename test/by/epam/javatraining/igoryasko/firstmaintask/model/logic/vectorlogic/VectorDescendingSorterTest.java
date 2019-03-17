@@ -18,13 +18,13 @@ import static org.junit.Assert.assertArrayEquals;
  */
 
 @RunWith(Parameterized.class)
-public class VectorSortTestDescending {
+public class VectorDescendingSorterTest {
     private static double delta = 0.00000000000001;
 
     private Vector vector;
     private double[] expected;
 
-    public VectorSortTestDescending(Vector vector, double[] expected) {
+    public VectorDescendingSorterTest(Vector vector, double[] expected) {
         this.vector = vector;
         this.expected = expected;
     }
@@ -40,17 +40,17 @@ public class VectorSortTestDescending {
 
     @Test
     public void bubbleSortDescending() {
-        assertArrayEquals(VectorSortDescending.bubbleSortDescending(vector).toArray(), expected, delta);
+        assertArrayEquals(VectorDescendingSorter.bubbleSortDescending(vector).toArray(), expected, delta);
     }
 
     @Test
     public void insertionSortDescending() {
-        assertArrayEquals(VectorSortDescending.insertionSortDescending(vector).toArray(), expected, delta);
+        assertArrayEquals(VectorDescendingSorter.insertionSortDescending(vector).toArray(), expected, delta);
     }
 
     @Test
     public void selectionDescending() {
-        assertArrayEquals(VectorSortDescending.selectionDescending(vector).toArray(), expected, delta);
+        assertArrayEquals(VectorDescendingSorter.selectionDescending(vector).toArray(), expected, delta);
     }
 
 }

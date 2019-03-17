@@ -7,10 +7,10 @@ import by.epam.javatraining.igoryasko.firstmaintask.model.logic.data.Vector;
  *
  * @author igoryasko
  *
- * Class VectorSortAscending implements sorf algorithms descending order
+ * Class VectorAscendingSorter implements sorf algorithms descending order
  */
 
-public class VectorSortDescending {
+public class VectorDescendingSorter {
 
     //    complexity best O(n) worst O(n2)
     public static Vector bubbleSortDescending(Vector vector) {

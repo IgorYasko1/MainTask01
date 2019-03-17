@@ -18,13 +18,13 @@ import static org.junit.Assert.*;
  */
 
 @RunWith(Parameterized.class)
-public class VectorSearchTest {
+public class VectorFinderTest {
 
     private Vector vector;
     private int expected;
     private int key;
 
-    public VectorSearchTest(Vector vector, int expected, int key) {
+    public VectorFinderTest(Vector vector, int expected, int key) {
         this.vector = vector;
         this.expected = expected;
         this.key = key;
@@ -41,26 +41,26 @@ public class VectorSearchTest {
 
     @Test
     public void linearSearch() {
-        assertEquals(expected, VectorSearch.linearSearch(vector, key));
+        assertEquals(expected, VectorFinder.linearSearch(vector, key));
     }
 
     @Test
     public void binarySearch() {
-        assertEquals(expected, VectorSearch.binarySearch(vector, key));
+        assertEquals(expected, VectorFinder.binarySearch(vector, key));
     }
 
     @Test
     public void linearSearchIncorrect() {
         int expectedDefault = -1;
         int incorrectKey = 99;
-        assertEquals(expectedDefault, VectorSearch.linearSearch(vector, incorrectKey));
+        assertEquals(expectedDefault, VectorFinder.linearSearch(vector, incorrectKey));
     }
 
     @Test
     public void binarySearchIncorrect() {
         int expectedDefault = -1;
         int incorrectKey = 4;
-        assertEquals(expectedDefault, VectorSearch.binarySearch(vector, incorrectKey));
+        assertEquals(expectedDefault, VectorFinder.binarySearch(vector, incorrectKey));
     }
 
 }

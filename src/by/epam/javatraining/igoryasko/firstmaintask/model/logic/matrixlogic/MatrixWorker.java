@@ -3,18 +3,18 @@ package by.epam.javatraining.igoryasko.firstmaintask.model.logic.matrixlogic;
 import by.epam.javatraining.igoryasko.firstmaintask.model.logic.data.Matrix;
 
 /**
- * Created by igoryasko
+ * Created by igoryasko on 4/1/19.
  *
  * @author igoryasko
  *
- * Class MatrixLogic implements methods for Matrix
- * searchMinElement, searchMaxElement,
+ * Class MatrixWorker implements methods for Matrix
+ * findMinElement, findMaxElement,
  * isSymmetrical, transport
  */
 
-public class MatrixLogic {
+public class MatrixWorker {
 
-    public static double searchMinElement(Matrix matrix) {
+    public static double findMinElement(Matrix matrix) {
         double minIndex = matrix.getElement(0, 0);
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix.innerSize(i); j++) {
@@ -26,7 +26,7 @@ public class MatrixLogic {
         return minIndex;
     }
 
-    public static double searchMaxElement(Matrix matrix) {
+    public static double findMaxElement(Matrix matrix) {
         double maxIndex = matrix.getElement(0, 0);
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix.innerSize(i); j++) {
@@ -39,16 +39,17 @@ public class MatrixLogic {
     }
 
     public static void main(String[] args) {
-        double[][] mas = {{2, 2, 3} ,
-                            {1, 2, 3}};
+        double[][] mas = {{2, 1, 3} ,
+                            {4, 2, 3}};
         Matrix matrix = new Matrix(mas);
-//        System.out.println(MatrixLogic.searchMinElement(matrix));
-//        System.out.println(MatrixLogic.searchMaxElement(matrix));
-        System.out.println(MatrixLogic.findLocalMin(matrix));
+//        System.out.println(MatrixWorker.findMinElement(matrix));
+//        System.out.println(MatrixWorker.findMaxElement(matrix));
+        System.out.println(MatrixWorker.findLocalMin(matrix));
+        System.out.println(MatrixWorker.findLocalMax(matrix));
 //        System.out.println(mas.length);
 //        System.out.println(mas[1].length);
-//        System.out.println(MatrixLogic.isSymmetrical(matrix));
-//        MatrixLogic.transport(matrix);
+//        System.out.println(MatrixWorker.isSymmetrical(matrix));
+//        MatrixWorker.transport(matrix);
 
 //        System.out.println("Начальная матрица");
 //        System.out.println("------");
@@ -63,15 +64,32 @@ public class MatrixLogic {
 
     public static double findLocalMin(Matrix matrix){
         double localMin = -1;
-        for (int i = 0; i < matrix.size(); i++){
-            for (int j = 0; j < matrix.innerSize(i) - 1; j++){
-                if (matrix.getElement(i, j) < matrix.getElement(i, j + 1)
-                    || matrix.getElement(i, j) < matrix.getElement(i + 1, j)){
-                    localMin = matrix.getElement(i, j);
+        for (int i = 1; i < matrix.size() - 1; i++){
+            for (int j = 1; j < matrix.innerSize(i) - 1; j++){
+                if (matrix.getElement(i, j) < matrix.getElement(i - 1, j)
+                    && matrix.getElement(i, j) < matrix.getElement(i + 1, j)
+                    && matrix.getElement(i, j) < matrix.getElement(i, j - 1)
+                    && matrix.getElement(i, j) < matrix.getElement(i, j + 1)){
+                    localMin = matrix.getElement(i - 1, j - 1);
                 }
             }
         }
         return localMin;
+    }
+
+    public static double findLocalMax(Matrix matrix){
+        double localMax = -1;
+        for (int i = 1; i < matrix.size() - 1; i++){
+            for (int j = 1; j < matrix.innerSize(i) - 1; j++){
+                if (matrix.getElement(i, j) > matrix.getElement(i - 1, j)
+                        && matrix.getElement(i, j) > matrix.getElement(i + 1, j)
+                        && matrix.getElement(i, j) > matrix.getElement(i, j - 1)
+                        && matrix.getElement(i, j) > matrix.getElement(i, j + 1)){
+                    localMax = matrix.getElement(i - 1, j - 1);
+                }
+            }
+        }
+        return localMax;
     }
 
     public static boolean isSymmetrical(Matrix matrix){
