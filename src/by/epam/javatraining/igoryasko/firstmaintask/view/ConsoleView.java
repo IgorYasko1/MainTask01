@@ -21,7 +21,7 @@ public class ConsoleView {
     }
 
     public static void printVectorAndMessage(String msg, Vector vector){
-        System.out.println(msg + " ");
+        System.out.println(msg);
         ConsoleView.printVector(vector);
     }
 

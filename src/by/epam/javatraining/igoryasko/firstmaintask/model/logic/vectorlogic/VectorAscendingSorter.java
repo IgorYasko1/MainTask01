@@ -164,7 +164,6 @@ public class VectorAscendingSorter {
             j++;
             k++;
         }
-
     }
 
 }

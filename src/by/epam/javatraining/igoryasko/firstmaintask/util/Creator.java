@@ -20,10 +20,4 @@ public class Creator {
         return new Matrix();
     }
 
-    public static void main(String[] args) {
-
-        Creator.createMatrix();
-
-    }
-
 }
