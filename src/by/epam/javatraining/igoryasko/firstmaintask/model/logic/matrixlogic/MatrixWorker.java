@@ -110,7 +110,7 @@ public class MatrixWorker {
         return isSemmetry;
     }
 
-    public static void transport(Matrix matrix){
+    public static Matrix transport(Matrix matrix){
         for (int i = 0; i < matrix.size(); i++){
             for (int j = i + 1; j < matrix.size(); j++){
                 double tmp = matrix.getElement(i, j);
@@ -118,6 +118,7 @@ public class MatrixWorker {
                 matrix.setElement(tmp ,j, i);
             }
         }
+        return matrix;
     }
 
 }
