@@ -17,6 +17,10 @@ public class Matrix {
 
     }
 
+    public Matrix(final Matrix another) {
+        this.elementData = another.elementData;
+    }
+
     public Matrix(final int row, final int column) {
         this.elementData = new double[row][column];
     }

@@ -17,12 +17,24 @@ public class Vector {
 
     }
 
+    public Vector(final Vector another){
+        this.elementData = another.elementData;
+    }
+
     public Vector(final int size){
         elementData = new double[size];
     }
 
     public Vector(final double[] array){
         elementData = array;
+    }
+
+    public double[] getElementData() {
+        return elementData;
+    }
+
+    public void setElementData(double[] elementData) {
+        this.elementData = elementData;
     }
 
     public void setElement(final double value, final int index){
@@ -39,14 +51,6 @@ public class Vector {
 
     public double[] toArray(){
         return elementData;
-    }
-
-    public double[] getElementData() {
-        return elementData;
-    }
-
-    public void setElementData(double[] elementData) {
-        this.elementData = elementData;
     }
 
     @Override
@@ -69,12 +73,6 @@ public class Vector {
     @Override
     public int hashCode() {
         return Arrays.hashCode(elementData);
-    }
-
-    public static void main(String[] args) {
-
-
-
     }
 
 }

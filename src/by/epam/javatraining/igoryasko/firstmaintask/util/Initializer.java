@@ -63,13 +63,16 @@ public class Initializer {
     public static void main(String[] args) {
         Vector vector = new Vector();
         Matrix matrix = new Matrix(2, 2);
-        String path = "C:\\Users\\igory\\IdeaProjects\\MainTask\\file\\test.txt";
-//        Initializer.initializeVectorFromFile(vector, path);
         Initializer.initializeVectorHardcode(vector, 1, 2, 3, 4, 4, 0, 9, 0);
+        Vector vector2 = new Vector(vector);
+        System.out.println(vector.equals(vector2));
         Initializer.initializeMatrixRandom(matrix);
         System.out.println(vector);
+        System.out.println(vector2);
         System.out.println(matrix);
 
+//        String path = "C:\\Users\\igory\\IdeaProjects\\MainTask\\file\\test.txt";
+//        Initializer.initializeVectorFromFile(vector, path);
     }
 
 }
