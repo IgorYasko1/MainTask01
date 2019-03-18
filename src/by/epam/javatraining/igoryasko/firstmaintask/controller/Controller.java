@@ -22,8 +22,8 @@ public class Controller {
         Vector vector = Creator.createVector();
         Matrix matrix = Creator.createMatrix();
 
-        Initializer.initializeVector(vector, 1, 2, 3, 4, 5, 6, 7);
-        Initializer.initializeMatrix(matrix, new double[][]{{3, 4}, {1, 2}});
+        Initializer.initializeVectorHardcode(vector, 1, 2, 3, 4, 5, 6, 7);
+        Initializer.initializeMatrixRandom(matrix);
         ConsoleView.print(VectorWorker.checkAscendingOrder(vector));
         ConsoleView.print(MatrixWorker.transport(matrix));
 

@@ -9,6 +9,7 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Arrays;
 import java.util.Collection;
 
+import static by.epam.javatraining.igoryasko.firstmaintask.model.logic.vectorlogic.VectorWorkerTest.delta;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
@@ -19,7 +20,6 @@ import static org.junit.Assert.assertArrayEquals;
 
 @RunWith(Parameterized.class)
 public class VectorDescendingSorterTest {
-    private static double delta = 0.00000000000001;
 
     private Vector vector;
     private double[] expected;
@@ -51,6 +51,16 @@ public class VectorDescendingSorterTest {
     @Test
     public void selectionDescending() {
         assertArrayEquals(VectorDescendingSorter.selectionDescending(vector).toArray(), expected, delta);
+    }
+
+    @Test
+    public void quickSort() {
+        assertArrayEquals(VectorDescendingSorter.quickSort(vector).toArray(), expected, delta);
+    }
+
+    @Test
+    public void mergeSort() {
+        assertArrayEquals(VectorDescendingSorter.mergeSort(vector, 0, vector.size() - 1).toArray(), expected, delta);
     }
 
 }

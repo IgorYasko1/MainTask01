@@ -13,23 +13,25 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class VectorWorkerTest {
-    private static Vector vector = new Vector(3, 9, 15, 27, 54);
-    private static double delta = 0.00000000000001;
+    public static double delta = 0.00000000000001;
 
     @Test
     public void searchMinElement() {
+        Vector vector = new Vector(3, 9, 15, 27, 54);
         double expected = 3;
         assertEquals(expected, VectorWorker.findMinElement(vector), delta);
     }
 
     @Test
     public void searchMaxElement() {
+        Vector vector = new Vector(3, 9, 15, 27, 54);
         double expected = 54;
         assertEquals(expected, VectorWorker.findMaxElement(vector), delta);
     }
 
     @Test
     public void findArithmeticAverage() {
+        Vector vector = new Vector(3, 9, 15, 27, 54);
         double expected = 21.6;
         assertEquals(expected, VectorWorker.countArithmeticMean(vector), delta);
     }
@@ -57,6 +59,7 @@ public class VectorWorkerTest {
 
     @Test
     public void findGeometricAverage() {
+        Vector vector = new Vector(3, 9, 15, 27, 54);
         double expected = 14.264038732150023;
         assertEquals(expected, VectorWorker.countGeometricMean(vector), delta);
     }
@@ -77,6 +80,7 @@ public class VectorWorkerTest {
 
     @Test
     public void isAscending() {
+        Vector vector = new Vector(3, 9, 15, 27, 54);
         if (!VectorWorker.checkAscendingOrder(vector)){
             Assert.fail();
         }
@@ -84,6 +88,7 @@ public class VectorWorkerTest {
 
     @Test
     public void isDescending() {
+        Vector vector = new Vector(3, 9, 15, 27, 54);
         if (VectorWorker.checkDescendingOrder(vector)){
             Assert.fail();
         }

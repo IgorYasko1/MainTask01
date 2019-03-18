@@ -9,6 +9,7 @@ import org.junit.runners.Parameterized.Parameters;
 import java.util.Arrays;
 import java.util.Collection;
 
+import static by.epam.javatraining.igoryasko.firstmaintask.model.logic.vectorlogic.VectorWorkerTest.delta;
 import static org.junit.Assert.assertArrayEquals;
 
 /**
@@ -19,7 +20,6 @@ import static org.junit.Assert.assertArrayEquals;
 
 @RunWith(Parameterized.class)
 public class VectorAscendingSorterTest {
-    private static double delta = 0.00000000000001;
 
     private Vector vector;
     private double[] expected;
