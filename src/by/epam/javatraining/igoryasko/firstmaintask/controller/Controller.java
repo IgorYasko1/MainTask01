@@ -18,10 +18,10 @@ public class Controller {
 
     public static void main(String[] args) {
 
-        Vector vector = Creator.createVector(0);
+        Vector vector = Creator.createVector(5);
         Matrix matrix = Creator.createMatrix(2, 2);
 
-        Initializer.initializeVector(vector, 1, 2, 3, 4, 5, 6, 7);
+        Initializer.initializeVector(vector, 1, 2, 3, 4, 5);
         Initializer.initializeMatrixRandom(matrix);
         ConsoleView.print(VectorWorker.checkAscendingOrder(vector));
         ConsoleView.print(MatrixWorker.transpose(matrix));

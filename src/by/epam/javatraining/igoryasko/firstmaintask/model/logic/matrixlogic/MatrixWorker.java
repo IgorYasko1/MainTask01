@@ -38,21 +38,6 @@ public class MatrixWorker {
         return maxIndex;
     }
 
-    public static void main(String[] args) {
-        double[][] mas = {{2, 1, 3},
-                {4, 2, 3}};
-        Matrix matrix = new Matrix(mas);
-//        System.out.println(MatrixWorker.findMinElement(matrix));
-//        System.out.println(MatrixWorker.findMaxElement(matrix));
-        System.out.println(MatrixWorker.findLocalMin(matrix));
-        System.out.println(MatrixWorker.findLocalMax(matrix));
-//        System.out.println(mas.length);
-//        System.out.println(mas[1].length);
-//        System.out.println(MatrixWorker.isSymmetrical(matrix));
-//        MatrixWorker.transport(matrix);
-
-    }
-
     public static double findLocalMin(Matrix matrix) {
         double localMin = -1;
         for (int i = 1; i < matrix.size() - 1; i++) {

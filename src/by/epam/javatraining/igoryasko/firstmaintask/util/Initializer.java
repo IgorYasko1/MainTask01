@@ -16,8 +16,10 @@ import java.util.Scanner;
 
 public class Initializer {
 
-    public static Vector initializeVector(final Vector vector, final double... number) {
-        vector.setElementData(number);
+    public static Vector initializeVector(final Vector vector, final double... value) {
+        for (int i = 0; i < vector.size() && i < value.length; i++) {
+            vector.setElement(value[i], i);
+        }
         return vector;
     }
 
@@ -41,11 +43,10 @@ public class Initializer {
         return vector;
     }
 
-    public static Matrix initializeMatrix(final Matrix matrix, final int row, final int column, final double... number) {
-        matrix.setElementData(new double[row][column]);
-        for (int i = 0; i < matrix.size(); i++){
-            for (int j = 0; j < number.length; j++){
-                matrix.setElement(number[j], i, j);
+    public static Matrix initializeMatrix(final Matrix matrix, final double... value) {
+        for (int i = 0; i < matrix.size(); i++) {
+            for (int j = 0; j < matrix.innerSize(i) && j < value.length; j++) {
+                matrix.setElement(value[j], i, j);
             }
         }
         return matrix;
