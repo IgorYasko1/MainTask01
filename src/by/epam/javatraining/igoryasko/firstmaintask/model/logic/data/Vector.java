@@ -63,9 +63,7 @@ public class Vector {
 
     @Override
     public String toString() {
-        return "Vector{" +
-                "elementData=" + Arrays.toString(elementData) +
-                '}';
+        return "Vector : " Arrays.toString(elementData);
     }
 
     @Override
