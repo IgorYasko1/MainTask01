@@ -41,8 +41,13 @@ public class Initializer {
         return vector;
     }
 
-    public static Matrix initializeMatrix(final Matrix matrix) {
-        matrix.setElementData(new double[][]{{1, 2, 4}, {1, 2, 5}});
+    public static Matrix initializeMatrix(final Matrix matrix, final int row, final int column, final double... number) {
+        matrix.setElementData(new double[row][column]);
+        for (int i = 0; i < matrix.size(); i++){
+            for (int j = 0; j < number.length; j++){
+                matrix.setElement(number[j], i, j);
+            }
+        }
         return matrix;
     }
 
@@ -58,13 +63,6 @@ public class Initializer {
     private static double generateRandom() {
         Random random = new Random();
         return random.nextDouble() * 100;
-    }
-
-    public static void main(String[] args) {
-        Matrix matrix = new Matrix(0, 0);
-//        Initializer.initializeMatrixRandom(matrix);
-        Initializer.initializeMatrix(matrix);
-        System.out.println(matrix);
     }
 
 }
