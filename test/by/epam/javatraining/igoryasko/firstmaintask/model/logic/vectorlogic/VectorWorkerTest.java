@@ -81,7 +81,7 @@ public class VectorWorkerTest {
     @Test
     public void isAscending() {
         Vector vector = new Vector(new double[]{3, 9, 15, 27, 54});
-        if (!VectorWorker.checkAscendingOrder(vector)){
+        if (!VectorWorker.checkAscendingOrder(vector)) {
             Assert.fail();
         }
     }
@@ -89,7 +89,7 @@ public class VectorWorkerTest {
     @Test
     public void isDescending() {
         Vector vector = new Vector(new double[]{3, 9, 15, 27, 54});
-        if (VectorWorker.checkDescendingOrder(vector)){
+        if (VectorWorker.checkDescendingOrder(vector)) {
             Assert.fail();
         }
     }

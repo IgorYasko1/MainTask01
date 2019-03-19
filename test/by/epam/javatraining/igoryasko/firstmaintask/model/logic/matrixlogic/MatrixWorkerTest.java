@@ -16,14 +16,14 @@ public class MatrixWorkerTest {
 
     @Test
     public void searchMinElement() {
-        Matrix matrix = new Matrix(new double[][]{{2, 2, 0} , {1, 2, 9}});
+        Matrix matrix = new Matrix(new double[][]{{2, 2, 0}, {1, 2, 9}});
         double expected = 0;
         assertEquals(expected, MatrixWorker.findMinElement(matrix), delta);
     }
 
     @Test
     public void searchMaxElement() {
-        Matrix matrix = new Matrix(new double[][]{{2, 2, 0} , {1, 2, 9}});
+        Matrix matrix = new Matrix(new double[][]{{2, 2, 0}, {1, 2, 9}});
         double expected = 9;
         assertEquals(expected, MatrixWorker.findMaxElement(matrix), delta);
     }
@@ -32,18 +32,19 @@ public class MatrixWorkerTest {
     public void isSymmetrical() {
         boolean expected = true;
         Matrix matrix = new Matrix(new double[][]{
-                                        {4, 6, 9, 9},
-                                        {6, 6, 5, 5},
-                                        {9, 5, 8, 8},
-                                        {9, 5, 8, 7}
+                {4, 6, 9, 9},
+                {6, 6, 5, 5},
+                {9, 5, 8, 8},
+                {9, 5, 8, 7}
         });
         assertEquals(expected, MatrixWorker.isSymmetrical(matrix));
     }
 
     @Test
-    public void transport() {
-
-//        assertEquals(expected, MatrixWorker.transport(matrix));
+    public void transpose() {
+        Matrix matrix = new Matrix(new double[][]{{1, 2}, {3, 4}});
+        Matrix expected = new Matrix(new double[][]{{1, 3}, {2, 4}});
+        assertEquals(expected, MatrixWorker.transpose(matrix));
     }
 
 }
