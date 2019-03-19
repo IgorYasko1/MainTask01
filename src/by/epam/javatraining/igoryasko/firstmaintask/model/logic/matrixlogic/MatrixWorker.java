@@ -9,7 +9,7 @@ import by.epam.javatraining.igoryasko.firstmaintask.model.logic.data.Matrix;
  * <p>
  * Class MatrixWorker implements methods for Matrix
  * findMinElement, findMaxElement,
- * isSymmetrical, transport
+ * isSymmetrical, transpose
  */
 
 public class MatrixWorker {
