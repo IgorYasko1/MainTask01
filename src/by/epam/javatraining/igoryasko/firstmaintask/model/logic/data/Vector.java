@@ -6,28 +6,27 @@ import java.util.Arrays;
  * Created by igoryasko on 4/1/19.
  *
  * @author igoryasko
- *
  */
 
 public class Vector {
 
     private double[] elementData;
 
-    public Vector(final Vector another){
+    public Vector(final Vector another) {
         this.elementData = another.elementData;
     }
 
-    public Vector(final int size){
-        if (size > 0){
+    public Vector(final int size) {
+        if (size > 0) {
             elementData = new double[size];
-        }else if (size == 0){
+        } else if (size == 0) {
             elementData = new double[]{};
-        }else {
+        } else {
             throw new IllegalArgumentException("Illegal size: " + size);
         }
     }
 
-    public Vector(final double[] array){
+    public Vector(final double[] array) {
         elementData = array;
     }
 
@@ -39,26 +38,26 @@ public class Vector {
         this.elementData = elementData;
     }
 
-    public void addElement(final double... number){
+    public void addElement(final double... number) {
         double[] tmp = Arrays.copyOf(elementData, elementData.length);
         elementData = new double[tmp.length + number.length];
         elementData = Arrays.copyOf(tmp, tmp.length + number.length);
         System.arraycopy(number, 0, elementData, elementData.length - number.length, number.length);
     }
 
-    public void setElement(final double value, final int index){
+    public void setElement(final double value, final int index) {
         elementData[index] = value;
     }
 
-    public double getElement(final int index){
+    public double getElement(final int index) {
         return elementData[index];
     }
 
-    public int size(){
+    public int size() {
         return elementData.length;
     }
 
-    public double[] toArray(){
+    public double[] toArray() {
         return elementData;
     }
 

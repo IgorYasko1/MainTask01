@@ -93,11 +93,11 @@ public class VectorWorker {
         } else {
             for (int i = 1; i < vector.size() - 1; i++) {
                 if (vector.getElement(i) < vector.getElement(i + 1)
-                    && vector.getElement(i) < vector.getElement(i - 1)){
+                        && vector.getElement(i) < vector.getElement(i - 1)) {
                     localMin = i;
                     break;
                 }
-                if(vector.getElement(vector.size() - 1) < vector.getElement(vector.size() - 2)){
+                if (vector.getElement(vector.size() - 1) < vector.getElement(vector.size() - 2)) {
                     localMin = vector.size() - 1;
                 }
             }
@@ -108,18 +108,18 @@ public class VectorWorker {
     public static int findLocalMax(Vector vector) {
         int localMax = -1;
         int index = 0;
-        if (vector.size() == 1){
+        if (vector.size() == 1) {
             localMax = index;
-        }else if (vector.getElement(index) > vector.getElement(index + 1)){
+        } else if (vector.getElement(index) > vector.getElement(index + 1)) {
             localMax = index;
-        }else {
+        } else {
             for (int i = 1; i < vector.size() - 1; i++) {
                 if (vector.getElement(i) > vector.getElement(i + 1)
-                        && vector.getElement(i) > vector.getElement(i - 1)){
+                        && vector.getElement(i) > vector.getElement(i - 1)) {
                     localMax = i;
                     break;
                 }
-                if (vector.getElement(vector.size() - 1) > vector.getElement(vector.size() - 2)){
+                if (vector.getElement(vector.size() - 1) > vector.getElement(vector.size() - 2)) {
                     localMax = vector.size() - 1;
                 }
             }

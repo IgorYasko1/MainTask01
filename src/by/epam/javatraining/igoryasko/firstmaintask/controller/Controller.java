@@ -12,20 +12,19 @@ import by.epam.javatraining.igoryasko.firstmaintask.view.ConsoleView;
  * Created by igoryasko on 4/1/19.
  *
  * @author igoryasko
- *
  */
 
 public class Controller {
 
     public static void main(String[] args) {
 
-        Vector vector = Creator.createVector();
-        Matrix matrix = Creator.createMatrix();
+        Vector vector = Creator.createVector(0);
+        Matrix matrix = Creator.createMatrix(2, 2);
 
-        Initializer.initializeVectorHardcode(vector, 1, 2, 3, 4, 5, 6, 7);
+        Initializer.initializeVector(vector, 1, 2, 3, 4, 5, 6, 7);
         Initializer.initializeMatrixRandom(matrix);
         ConsoleView.print(VectorWorker.checkAscendingOrder(vector));
-        ConsoleView.print(MatrixWorker.transport(matrix));
+        ConsoleView.print(MatrixWorker.transpose(matrix));
 
     }
 

@@ -6,7 +6,7 @@ import by.epam.javatraining.igoryasko.firstmaintask.model.logic.data.Vector;
  * Created by igoryasko
  *
  * @author igoryasko
- *
+ * <p>
  * Class VectorAscendingSorter implements sorf algorithms ascending order
  * and method revers
  */

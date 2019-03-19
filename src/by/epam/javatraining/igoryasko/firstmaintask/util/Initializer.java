@@ -16,23 +16,19 @@ import java.util.Scanner;
 
 public class Initializer {
 
-//    private void fillElementData(final double... value){
-//        System.arraycopy(value, 0, this.elementData, 0, value.length);
-//    }
-
-    public static Vector initializeVectorHardcode(Vector vector, double... numbers) {
-        vector.setElementData(numbers);
+    public static Vector initializeVector(final Vector vector, final double... number) {
+        vector.setElementData(number);
         return vector;
     }
 
-    public static Vector initializeVectorRandom(Vector vector) {
+    public static Vector initializeVectorRandom(final Vector vector) {
         for (int i = 0; i < vector.size(); i++) {
             vector.setElement(Initializer.generateRandom(), i);
         }
         return vector;
     }
 
-    public static Vector initializeVectorFromFile(Vector vector, final String path) {
+    public static Vector initializeVectorFromFile(final Vector vector, final String path) {
         try (Scanner sc = new Scanner(Paths.get(path))) {
             int i = 0;
             while (sc.hasNextDouble()) {
@@ -45,38 +41,30 @@ public class Initializer {
         return vector;
     }
 
-//    public Matrix(final double... value){
-//        this.elementData = new double[value.length][value.length];
-//    }
+    public static Matrix initializeMatrix(final Matrix matrix) {
+        matrix.setElementData(new double[][]{{1, 2, 4}, {1, 2, 5}});
+        return matrix;
+    }
 
-    public static Matrix initializeMatrixRandom(Matrix matrix) {
-        for (int i = 0; i < matrix.size(); i++){
-            for (int j = 0; j < matrix.innerSize(i); j++){
+    public static Matrix initializeMatrixRandom(final Matrix matrix) {
+        for (int i = 0; i < matrix.size(); i++) {
+            for (int j = 0; j < matrix.innerSize(i); j++) {
                 matrix.setElement(Initializer.generateRandom(), i, j);
             }
         }
         return matrix;
     }
 
-    private static double generateRandom(){
+    private static double generateRandom() {
         Random random = new Random();
         return random.nextDouble() * 100;
     }
 
     public static void main(String[] args) {
-//        Vector vector = new Vector();
-//        Initializer.initializeVectorHardcode(vector, 1, 2, 3, 4, 4, 0, 9, 0);
-//        Initializer.initializeVectorHardcode(vector, 1, 2);
-//        Vector vector2 = new Vector(vector);
-//        System.out.println(vector.equals(vector2));
-//        System.out.println(vector);
-//        System.out.println(vector2);
-
-        Matrix matrix = new Matrix(2, 2);
-        Initializer.initializeMatrixRandom(matrix);
+        Matrix matrix = new Matrix(0, 0);
+//        Initializer.initializeMatrixRandom(matrix);
+        Initializer.initializeMatrix(matrix);
         System.out.println(matrix);
-//        String path = "C:\\Users\\igory\\IdeaProjects\\MainTask\\file\\test.txt";
-//        Initializer.initializeVectorFromFile(vector, path);
     }
 
 }

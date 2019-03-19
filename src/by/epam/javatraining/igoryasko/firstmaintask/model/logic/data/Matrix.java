@@ -19,9 +19,9 @@ public class Matrix {
     public Matrix(final int row, final int column) {
         if (row < 0 || column < 0) {
             throw new IllegalArgumentException("Illegal row: " + row + " Illegal column: " + column);
-        }else if(row == 0){
+        } else if (row == 0) {
             elementData = new double[][]{};
-        }else {
+        } else {
             elementData = new double[row][column];
         }
     }
