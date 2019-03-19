@@ -38,36 +38,6 @@ public class MatrixWorker {
         return maxIndex;
     }
 
-    public static double findLocalMin(Matrix matrix) {
-        double localMin = -1;
-        for (int i = 1; i < matrix.size() - 1; i++) {
-            for (int j = 1; j < matrix.innerSize(i) - 1; j++) {
-                if (matrix.getElement(i, j) < matrix.getElement(i - 1, j)
-                        && matrix.getElement(i, j) < matrix.getElement(i + 1, j)
-                        && matrix.getElement(i, j) < matrix.getElement(i, j - 1)
-                        && matrix.getElement(i, j) < matrix.getElement(i, j + 1)) {
-                    localMin = matrix.getElement(i - 1, j - 1);
-                }
-            }
-        }
-        return localMin;
-    }
-
-    public static double findLocalMax(Matrix matrix) {
-        double localMax = -1;
-        for (int i = 1; i < matrix.size() - 1; i++) {
-            for (int j = 1; j < matrix.innerSize(i) - 1; j++) {
-                if (matrix.getElement(i, j) > matrix.getElement(i - 1, j)
-                        && matrix.getElement(i, j) > matrix.getElement(i + 1, j)
-                        && matrix.getElement(i, j) > matrix.getElement(i, j - 1)
-                        && matrix.getElement(i, j) > matrix.getElement(i, j + 1)) {
-                    localMax = matrix.getElement(i - 1, j - 1);
-                }
-            }
-        }
-        return localMax;
-    }
-
     public static boolean isSymmetrical(Matrix matrix) {
         boolean isSemmetry = true;
 
