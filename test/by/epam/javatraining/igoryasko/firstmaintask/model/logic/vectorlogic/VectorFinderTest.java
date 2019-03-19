@@ -33,9 +33,9 @@ public class VectorFinderTest {
     @Parameters
     public static Collection<Object[]> getParameters() {
         return Arrays.asList(new Object[][]{
-                {new Vector(-4, 0, 3, 15, 27, 54), 3, 15},
-                {new Vector(-7, 0, 2, 22), 3, 22},
-                {new Vector(-12, 1, 2, 5, 18), 0, -12}
+                {new Vector(new double[]{-4, 0, 3, 15, 27, 54}), 3, 15},
+                {new Vector(new double[]{-7, 0, 2, 22}), 3, 22},
+                {new Vector(new double[]{-12, 1, 2, 5, 18}), 0, -12}
         });
     }
 

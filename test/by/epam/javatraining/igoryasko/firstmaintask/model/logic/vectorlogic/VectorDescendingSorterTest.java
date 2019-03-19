@@ -32,9 +32,9 @@ public class VectorDescendingSorterTest {
     @Parameters
     public static Collection<Object[]> getParameters() {
         return Arrays.asList(new Object[][]{
-                {new Vector(5, 2, 1, 4, 3), new double[]{5, 4, 3, 2, 1}},
-                {new Vector(-3, 16, 0, 2, 24), new double[]{24, 16, 2, 0, -3}},
-                {new Vector(45, -23, 9, 99, 0), new double[]{99, 45, 9, 0, -23}},
+                {new Vector(new double[]{5, 2, 1, 4, 3}), new double[]{5, 4, 3, 2, 1}},
+                {new Vector(new double[]{-3, 16, 0, 2, 24}), new double[]{24, 16, 2, 0, -3}},
+                {new Vector(new double[]{45, -23, 9, 99, 0}), new double[]{99, 45, 9, 0, -23}},
         });
     }
 

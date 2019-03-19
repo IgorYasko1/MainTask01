@@ -26,9 +26,8 @@ public class Initializer {
     }
 
     public static Vector initializeVectorRandom(Vector vector) {
-        Random random = new Random();
         for (int i = 0; i < vector.size(); i++) {
-            vector.setElement(random.nextDouble() * 100, i);
+            vector.setElement(Initializer.generateRandom(), i);
         }
         return vector;
     }
@@ -51,26 +50,31 @@ public class Initializer {
 //    }
 
     public static Matrix initializeMatrixRandom(Matrix matrix) {
-        Random random = new Random();
         for (int i = 0; i < matrix.size(); i++){
             for (int j = 0; j < matrix.innerSize(i); j++){
-                matrix.setElement(random.nextDouble() * 100, i, j);
+                matrix.setElement(Initializer.generateRandom(), i, j);
             }
         }
         return matrix;
     }
 
-    public static void main(String[] args) {
-        Vector vector = new Vector();
-        Matrix matrix = new Matrix(2, 2);
-        Initializer.initializeVectorHardcode(vector, 1, 2, 3, 4, 4, 0, 9, 0);
-        Vector vector2 = new Vector(vector);
-        System.out.println(vector.equals(vector2));
-        Initializer.initializeMatrixRandom(matrix);
-        System.out.println(vector);
-        System.out.println(vector2);
-        System.out.println(matrix);
+    private static double generateRandom(){
+        Random random = new Random();
+        return random.nextDouble() * 100;
+    }
 
+    public static void main(String[] args) {
+//        Vector vector = new Vector();
+//        Initializer.initializeVectorHardcode(vector, 1, 2, 3, 4, 4, 0, 9, 0);
+//        Initializer.initializeVectorHardcode(vector, 1, 2);
+//        Vector vector2 = new Vector(vector);
+//        System.out.println(vector.equals(vector2));
+//        System.out.println(vector);
+//        System.out.println(vector2);
+
+        Matrix matrix = new Matrix(2, 2);
+        Initializer.initializeMatrixRandom(matrix);
+        System.out.println(matrix);
 //        String path = "C:\\Users\\igory\\IdeaProjects\\MainTask\\file\\test.txt";
 //        Initializer.initializeVectorFromFile(vector, path);
     }

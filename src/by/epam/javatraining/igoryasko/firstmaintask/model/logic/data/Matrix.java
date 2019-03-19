@@ -1,7 +1,6 @@
 package by.epam.javatraining.igoryasko.firstmaintask.model.logic.data;
 
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  * Created by igoryasko on 4/1/19.
@@ -13,29 +12,22 @@ public class Matrix {
 
     private double[][] elementData;
 
-    public Matrix() {
-
-    }
-
     public Matrix(final Matrix another) {
         this.elementData = another.elementData;
     }
 
     public Matrix(final int row, final int column) {
-        this.elementData = new double[row][column];
+        if (row < 0 || column < 0) {
+            throw new IllegalArgumentException("Illegal row: " + row + " Illegal column: " + column);
+        }else if(row == 0){
+            elementData = new double[][]{};
+        }else {
+            elementData = new double[row][column];
+        }
     }
 
     public Matrix(final double[][] matrix) {
         elementData = matrix;
-    }
-
-    private void fillElementDataRandom() {
-        Random random = new Random();
-        for (int i = 0; i < elementData.length; i++) {
-            for (int j = 0; j < elementData[i].length; j++) {
-                elementData[i][j] = random.nextDouble() * 100;
-            }
-        }
     }
 
     public double[][] getElementData() {
@@ -51,7 +43,7 @@ public class Matrix {
     }
 
     public void setElement(final double value, final int index, final int index2) {
-        this.elementData[index][index2] = value;
+        elementData[index][index2] = value;
     }
 
     public int size() {

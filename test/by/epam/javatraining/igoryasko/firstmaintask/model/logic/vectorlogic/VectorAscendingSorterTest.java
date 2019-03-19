@@ -32,9 +32,9 @@ public class VectorAscendingSorterTest {
     @Parameters
     public static Collection<Object[]> getParameters() {
         return Arrays.asList(new Object[][]{
-                {new Vector(5, 2, 1, 4, 3), new double[]{1, 2, 3, 4, 5}},
-                {new Vector(-3, 16, 0, 2, 24), new double[]{-3, 0, 2, 16, 24}},
-                {new Vector(45, -23, 9, 99, 0), new double[]{-23, 0, 9, 45, 99}},
+                {new Vector(new double[]{5, 2, 1, 4, 3}), new double[]{1, 2, 3, 4, 5}},
+                {new Vector(new double[]{-3, 16, 0, 2, 24}), new double[]{-3, 0, 2, 16, 24}},
+                {new Vector(new double[]{45, -23, 9, 99, 0}), new double[]{-23, 0, 9, 45, 99}},
         });
     }
 
@@ -65,7 +65,7 @@ public class VectorAscendingSorterTest {
 
     @Test
     public void reverse() {
-        Vector vector = new Vector(5, 2, 1, 4, 3);
+        Vector vector = new Vector(new double[]{5, 2, 1, 4, 3});
         double[] expected = new double[]{3, 4, 1, 2, 5};
         assertArrayEquals(VectorAscendingSorter.reverse(vector).toArray(), expected, delta);
     }

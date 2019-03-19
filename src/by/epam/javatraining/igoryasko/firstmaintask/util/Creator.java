@@ -12,12 +12,12 @@ import by.epam.javatraining.igoryasko.firstmaintask.model.logic.data.Vector;
 
 public class Creator {
 
-    public static Vector createVector(){
-        return new Vector();
+    public static Vector createVector(final int size){
+        return new Vector(size);
     }
 
-    public static Matrix createMatrix(){
-        return new Matrix();
+    public static Matrix createMatrix(final int row, final int column){
+        return new Matrix(row, column);
     }
 
 }
