@@ -60,9 +60,7 @@ public class Matrix {
 
     @Override
     public String toString() {
-        return "Matrix{" +
-                "elementData=" + Arrays.deepToString(elementData) +
-                '}';
+        return "Matrix : " + Arrays.deepToString(elementData);
     }
 
     @Override
