@@ -11,6 +11,10 @@ import java.util.Arrays;
 public class Matrix {
 
     private double[][] elementData;
+    
+    public Matrix(){
+        
+    }
 
     public Matrix(final Matrix another) {
         this.elementData = another.elementData;
