@@ -11,6 +11,10 @@ import java.util.Arrays;
 public class Vector {
 
     private double[] elementData;
+    
+    public Vector(){
+        
+    }
 
     public Vector(final Vector another) {
         this.elementData = another.elementData;
