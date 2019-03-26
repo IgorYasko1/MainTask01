@@ -13,7 +13,7 @@ public class Vector {
     private double[] elementData;
     
     public Vector(){
-        
+        elementData = new double[0];
     }
 
     public Vector(final Vector another) {
