@@ -13,7 +13,7 @@ public class Matrix {
     private double[][] elementData;
     
     public Matrix(){
-        
+        elementData = new double[0][0];
     }
 
     public Matrix(final Matrix another) {
