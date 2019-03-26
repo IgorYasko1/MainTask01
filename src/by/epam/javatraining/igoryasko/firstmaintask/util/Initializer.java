@@ -16,21 +16,21 @@ import java.util.Scanner;
 
 public class Initializer {
 
-    public static Vector initializeVector(final Vector vector, final double... value) {
+    public static Vector initializeVector(Vector vector, double... value) {
         for (int i = 0; i < vector.size() && i < value.length; i++) {
             vector.setElement(value[i], i);
         }
         return vector;
     }
 
-    public static Vector initializeVectorRandom(final Vector vector) {
+    public static Vector initializeVectorRandom(Vector vector) {
         for (int i = 0; i < vector.size(); i++) {
             vector.setElement(Initializer.generateRandom(), i);
         }
         return vector;
     }
 
-    public static Vector initializeVectorFromFile(final Vector vector, final String path) {
+    public static Vector initializeVectorFromFile(Vector vector, String path) {
         try (Scanner sc = new Scanner(Paths.get(path))) {
             int i = 0;
             while (sc.hasNextDouble()) {
@@ -43,7 +43,7 @@ public class Initializer {
         return vector;
     }
 
-    public static Matrix initializeMatrix(final Matrix matrix, final double... value) {
+    public static Matrix initializeMatrix(Matrix matrix, double... value) {
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix.innerSize(i) && j < value.length; j++) {
                 matrix.setElement(value[j], i, j);
@@ -52,7 +52,7 @@ public class Initializer {
         return matrix;
     }
 
-    public static Matrix initializeMatrixRandom(final Matrix matrix) {
+    public static Matrix initializeMatrixRandom(Matrix matrix) {
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix.innerSize(i); j++) {
                 matrix.setElement(Initializer.generateRandom(), i, j);
